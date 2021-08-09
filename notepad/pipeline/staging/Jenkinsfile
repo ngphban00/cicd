@@ -31,13 +31,13 @@ podTemplate(label: 'staging',
     stage ('Run Acceptance Tests') {
       build job: 'notepad-acceptance-test', parameters: [
         [$class: 'StringParameterValue', name: 'GIT_BRANCH', value: 'master'],
-        [$class: 'StringParameterValue', name: 'notepad_URL', value: 'http://notepad-service-staging:8080']
+        [$class: 'StringParameterValue', name: 'NOTEPAD_URL', value: 'http://notepad-service-staging:8080']
       ]
     }
 
     stage ('Run Performance Tests') {
       build job: 'notepad-performance-test', parameters: [
-        [$class: 'StringParameterValue', name: 'notepad_URL', value: 'http://notepad-service-staging:8080']
+        [$class: 'StringParameterValue', name: 'NOTEPAD_URL', value: 'http://notepad-service-staging:8080']
       ]
     }
   }
