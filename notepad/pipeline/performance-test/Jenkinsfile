@@ -8,7 +8,7 @@ podTemplate(label: 'performance',
 {
   node ('performance') {
     stage('Checkout the notepad Performance Test') {
-      git credentialsId: 'bitbucket-app-password', url: 'https://annpb@bitbucket.org/annpb/note_test.git', branch: 'master'
+      git credentialsId: 'bitbucket-app-password', url: 'https://annpb@bitbucket.org/annpb/testing.git', branch: 'master'
     }
 
     stage('Run Performance Tests') {
